@@ -17,7 +17,7 @@ namespace PressurePlateHandler
 
 		Chunk.ForEachEntityInBox(cBoundingBox(Vector3d(0.5, 0, 0.5) + Position, 0.5, 0.5), [&](cEntity & Entity)
 		{
-			if (Entity.IsPlayer())
+			if (Entity.IsPlayer() && !Entity.IsGameModeSpectator())
 			{
 				FoundPlayer = true;
 			}
